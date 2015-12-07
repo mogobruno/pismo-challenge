@@ -4,7 +4,9 @@ var mongoose = require('mongoose')
 var bodyParser = require('body-parser');
 var productRouter = require('./app/routers/productRouter');
 
-mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/DesafioDb')
+mongoose.connect('mongodb://localhost/DesafioDb')
+
+console.log(mongoose);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
