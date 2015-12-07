@@ -6,8 +6,6 @@ var productRouter = require('./app/routers/productRouter');
 
 mongoose.connect('mongodb://localhost/DesafioDb')
 
-console.log(mongoose);
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -16,7 +14,6 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 router.use(function(req, res, next){
-	console.log('Middleware for all requests');
 	next();
 });
 
