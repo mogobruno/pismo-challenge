@@ -1,3 +1,5 @@
+(function(){
+	
 var Sales = require('./../models/sales');
 
 var responseSender = function(err, response, res){
@@ -52,3 +54,5 @@ var persistence = {
 }
 
 module.exports = persistence;
+
+})();

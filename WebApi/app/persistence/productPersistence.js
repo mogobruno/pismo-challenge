@@ -1,3 +1,5 @@
+(function(){
+	
 var Product = require('./../models/product');
 
 var responseSender = function(err, response, res){
@@ -79,3 +81,5 @@ var persistence = {
 }
 
 module.exports = persistence;
+
+})();

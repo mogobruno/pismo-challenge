@@ -1,3 +1,5 @@
+(function(){
+	
 var persistence = require('./../persistence/salesPersistence');
 
 var salesRouter = function(router){
@@ -18,3 +20,5 @@ var salesRouter = function(router){
 }
 
 module.exports = salesRouter;
+
+})();

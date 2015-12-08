@@ -1,3 +1,5 @@
+(function(){
+
 var persistence = require('./../persistence/productPersistence');
 
 var productRouter = function(router){
@@ -24,3 +26,5 @@ var productRouter = function(router){
 }
 
 module.exports = productRouter;
+
+})();
