@@ -3,6 +3,7 @@ var app = express();
 var mongoose = require('mongoose')
 var bodyParser = require('body-parser');
 var productRouter = require('./app/routers/productRouter');
+var salesRouter = require('./app/routers/salesRouter');
 
 mongoose.connect('mongodb://localhost/DesafioDb')
 
@@ -27,6 +28,7 @@ router.get("/", function(req, res){
 });
 
 productRouter(router);
+salesRouter(router);
 
 app.listen(port);
 console.log("server is running on port "+port);

@@ -9,7 +9,9 @@
  */
 angular.module('webClientApp')
   .controller('ProductcreateCtrl', function ($scope, $location, Products) {
-  		$scope.product = new Products();
+  		var product = new Products();
+  		product.type = "Unidade";
+  		$scope.product = product;
 		$scope.save = function(product){
 			product.$save(
 			function success(success){ 

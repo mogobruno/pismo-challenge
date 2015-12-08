@@ -19,7 +19,7 @@ var isValid = function(product){
 	return false;
 }
 
-var percistence = {
+var persistence = {
 	create: function(data, res){
 		var product = new Product();
 		
@@ -78,4 +78,4 @@ var percistence = {
 	},
 }
 
-module.exports = percistence;
+module.exports = persistence;
