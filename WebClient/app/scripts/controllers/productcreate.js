@@ -13,17 +13,30 @@ angular.module('webClientApp')
   		product.type = "Unidade";
   		$scope.product = product;
 		$scope.save = function(product){
-			product.$save(
-			function success(success){ 
-				$location.path('/products'); 
-			},
-			function error(error){
-				swal({
-					title: "Erro!",
-					text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
-					type: "error",
-					confirmButtonText: "Ok" 
+			if($scope.isValid(product)){
+				product.$save(
+				function (success){ 
+					$location.path('/products'); 
+				},
+				function (error){
+					swal({
+						title: "Erro!",
+						text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
+						type: "error",
+						confirmButtonText: "Ok" 
+					});
 				});
-			});
+			}
+		}
+
+		$scope.isValid = function(product){
+			if(product.name.length <= 50 &&
+			   product.description.length <= 250 &&
+			   (product.type === "Peca"  ||
+			   product.type === "Caixa" ||
+			   product.type === "Unidade")){
+				return true;
+			}
+			return false;
 		}
   });

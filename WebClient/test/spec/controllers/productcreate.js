@@ -17,7 +17,48 @@ describe('Controller: ProductcreateCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ProductcreateCtrl.awesomeThings.length).toBe(3);
+  it('Verificar se um produto com nome maior que 50 caracteres e invalido', function () {
+    var product = {
+      name:"um nome muito grande não pode ser considerado um nome valido, pois a quantidade de caracteres ultrapassa o limite permitido pelo sistema.",
+      value: 100,
+      description:"Descrição do produto",
+      amount: 123,
+      type: "Unidade"
+    }
+    expect(scope.isValid(product)).toBe(false);
+  });
+
+  it('Verificar um produto com todos os campos dentro dos valores validos', function () {
+    var product = {
+      name:"Caneta",
+      value: 100,
+      description:"Descrição do produto",
+      amount: 123,
+      type: "Unidade"
+    }
+    expect(scope.isValid(product)).toBe(true);
+  });
+
+  it('Verificar se um produto com descrição maior que 250 caracteres e invalido', function () {
+    var product = {
+      name:"Caneta",
+      value: 100,
+      description:"Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produtoDescrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto",
+      amount: 123,
+      type: "Unidade"
+    }
+    expect(scope.isValid(product)).toBe(false);
+  });
+
+  it('Verificar se um produto com tipo diferente de "Unidade", "Caixa" ou "Peca" e invalido', function () {
+    var product = {
+      name:"Caneta",
+      value: 100,
+      description:"Descrição do produto",
+      amount: 123,
+      type: "Metros"
+    }
+    expect(scope.isValid(product)).toBe(false);
   });
 });
+

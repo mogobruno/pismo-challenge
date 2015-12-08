@@ -17,7 +17,21 @@ describe('Controller: SalescreateCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(SalescreateCtrl.awesomeThings.length).toBe(3);
+  it('Verificar se uma venda sem produto e invalida', function () {
+    var sales = {
+      total: 0,
+      products: []
+    }
+    expect(scope.isValid(sales)).toBe(false);
+  });
+
+  it('Verificar se uma venda com produto e valida', function () {
+    var sales = {
+      total: 10,
+      products: [
+        {amount: 12, salesAmount: 1}
+      ]
+    }
+    expect(scope.isValid(sales)).toBe(true);
   });
 });

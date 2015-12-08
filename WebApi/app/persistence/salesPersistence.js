@@ -9,14 +9,14 @@ var responseSender = function(err, response, res){
 }
 
 var isValid = function(sales){
+	if(sales.total > 0){
+		return true;
+	}
 	for (index in sales.products){
 		var product = sales.products[index];
 		if(product.amount >= product.salesAmount){
 			return true;
 		}
-	}
-	if(sales.total >= 0){
-		return true;
 	}
 	return false;
 }

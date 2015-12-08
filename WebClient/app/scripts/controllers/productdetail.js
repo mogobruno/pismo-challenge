@@ -16,10 +16,10 @@ angular.module('webClientApp')
 
   	$scope.save = function(product){
   		product.$update({ id: $routeParams.id }, 
-  		function success(success){
+  		function (success){
   			$scope.productEdit = false;
   		},
-  		function error(error){
+  		function (error){
   			$scope.productEdit = false;
   		})
   	}

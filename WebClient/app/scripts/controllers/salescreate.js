@@ -42,18 +42,41 @@ angular.module('webClientApp')
   	}
 
   	$scope.save = function(sales){
-			sales.$save(
-			function success(success){ 
-				$location.path('/sales'); 
-			},
-			function error(error){
-				swal({
-					title: "Erro!",
-					text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
-					type: "error",
-					confirmButtonText: "Ok" 
-				});
-			});
+      if($scope.isValid(sales)){
+  			sales.$save(
+  			function (success){ 
+  				$location.path('/sales'); 
+  			},
+  			function (error){
+  				swal({
+  					title: "Erro!",
+  					text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
+  					type: "error",
+  					confirmButtonText: "Ok" 
+  				});
+  			});
+      }else{
+        swal({
+          title: "Erro!",
+          text: "É necessário 1 produto para efetuar a venda",
+          type: "error",
+          confirmButtonText: "Ok" 
+        });
+      }
 		}
+
+    $scope.isValid = function(sales){
+      if(sales.total > 0){
+        return true;
+      }
+      for (var index in sales.products){
+        var product = sales.products[index];
+        if(product.amount >= product.salesAmount){
+          return true;
+        }
+      }
+      
+      return false;
+    }
 
   });
