@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 
 /**
@@ -40,3 +41,5 @@ angular.module('webClientApp')
 			return false;
 		}
   });
+
+})()
