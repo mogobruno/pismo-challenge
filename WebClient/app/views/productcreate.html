@@ -1,0 +1,43 @@
+<section class="container-fluid">
+	<div class="row">
+		<div class="title">
+			<h1>Cadastro de Produto</h1>
+		</div>
+		<div>
+			<form ng-submit="save(product)">
+				<div class="form-group">
+		            <label for="name" class="control-label">Nome:</label>
+		            <input type="text" ng-model="product.name" class="form-control" id="name" required placeholder="Digite o nome do produto" maxlength="50">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="value" class="control-label">Valor:</label>
+		            <input type="number" ng-model="product.value" class="form-control" id="value" required placeholder="Digite o valor do produto" min="0">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="type" class="control-label">Unidade:</label>
+		            <select id="type" class="form-control" required>
+		            	<option value="Unidade">Unidade</option>
+		            	<option value="Caixa">Caixa</option>
+		            	<option value="Peca">Peça</option>
+		            </select>
+		        </div>
+
+		        <div class="form-group">
+		            <label for="amount" class="control-label">Quantidade:</label>
+		            <input type="number" ng-model="product.amount" class="form-control" id="amount" required placeholder="Digite a quatidade do produto" min="0">
+		        </div>
+
+		        <div class="form-group">
+		            <label for="description" class="control-label">Descrição:</label>
+		            <input type="text" ng-model="product.description" class="form-control" id="description" required placeholder="Digite a descrição do produto" maxlength="250">
+		        </div>
+
+		        <div class="form-group">
+		            <input type="submit" class="btn btn-default btn-success btn-lg" id="description">
+		        </div>
+			</form>
+		</div>
+	</div>
+</section>

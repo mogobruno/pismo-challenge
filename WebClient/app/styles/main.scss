@@ -5,7 +5,49 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /* Custom page footer */
 .footer {
+  margin-top: 100px;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  clear: left;
+}
+
+.box {
+  border: 1px solid #c3c3c3;
+  margin-bottom:10px;
+  margin-top:10px;
+  padding: 1.2em;
+  box-shadow: 1px 1px 1px #c3c3c3;
+}
+
+.box-content{
+  clear: both;
+}
+
+.title {
+  border-bottom: 1px solid #c3c3c3;
+  margin-bottom: 10px;
+}
+
+.btn-align{
+  float:right;
+  margin-right:3px;
+}
+
+.btn-green:hover {
+  background-color: #16a085; 
+  color: #ecf0f1;
+}
+.btn-red:hover {
+  background-color: #c0392b;
+  color: #ecf0f1;
+}
+.btn-blue:hover {
+  background-color: #2980b9;
+  color: #ecf0f1;
+}
+
+.btn-purple:hover {
+  background-color: #8e44ad;
+  color: #ecf0f1;
 }

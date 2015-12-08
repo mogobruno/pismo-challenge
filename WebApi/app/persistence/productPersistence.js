@@ -56,7 +56,7 @@ var percistence = {
 				product.type = data.type || product.type;
 				if(isValid(product)){
 					product.save(function(err){
-						responseSender(err, {message: 'Product updated.'}, res);
+						responseSender(err, product, res);
 					});
 				}else{
 					res.send({message:"Product is invalid"})
