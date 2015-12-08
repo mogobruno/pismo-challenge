@@ -21,12 +21,13 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/products', {
+        templateUrl: 'views/products.html',
+        controller: 'ProductsCtrl',
+        controllerAs: 'products'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .value('WebApiURL', "http://localhost:8080/api");
