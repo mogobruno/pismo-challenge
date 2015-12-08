@@ -24,6 +24,6 @@ angular.module('webClientApp')
 					type: "error",
 					confirmButtonText: "Ok" 
 				});
-			})
+			});
 		}
   });

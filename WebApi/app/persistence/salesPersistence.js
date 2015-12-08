@@ -9,7 +9,13 @@ var responseSender = function(err, response, res){
 }
 
 var isValid = function(sales){
-	if(1===1){
+	for (index in sales.products){
+		var product = sales.products[index];
+		if(product.amount >= product.salesAmount){
+			return true;
+		}
+	}
+	if(sales.total >= 0){
 		return true;
 	}
 	return false;
@@ -33,24 +39,6 @@ var persistence = {
 			res.send({message:"Sales is invalid"})
 		}
 	},
-	update: function(sales_id, data, res){
-		Sales.findById(sales_id, function(err, sales){
-			if(err){
-				res.send(err);
-			}else{
-
-				//Create feed
-
-				if(isValid(sales)){
-					sales.save(function(err){
-						responseSender(err, sales, res);
-					});
-				}else{
-					res.send({message:"Sales is invalid"})
-				}		
-			}
-		});
-	},
 	list: function(res){
 		Sales.find(function(err, sales){
 			responseSender(err, sales, res);
@@ -59,13 +47,6 @@ var persistence = {
 	get: function(sales_id, res){
 		Sales.findById(sales_id, function(err, sales){
 			responseSender(err, sales, res);
-		});
-	},
-	remove: function(sales_id, res){
-		Sales.remove({
-			_id: sales_id
-		}, function(err){
-			responseSender(err, { message: 'Sales deleted'}, res);
 		});
 	},
 }

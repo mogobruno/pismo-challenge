@@ -1,0 +1,26 @@
+<section class="container-fluid">
+	<div class="row">
+		<div class="title">
+			<h1>Efetuar uma Venda</h1>
+		</div>
+		<div>
+			<form ng-submit="save(sales)">
+				<div class="list-group">
+					<a href="" class="list-group-item" ng-repeat="product in products" >
+						{{product.name}}, {{product.value | currency:"R$"}} / {{product.type}} 
+						<input type="number" 
+						max="{{product.amount}}" 
+						min="1"
+						placeholder="Quantidade no máximo {{product.amount}}" 
+						ng-model="product.salesAmount" 
+						ng-change="calculateTotal()" 
+						class="form-control">
+					</a>
+				</div>
+	  
+		        <p>Total: {{sales.total | currency:"R$"}}</p>
+		        <input type="submit" class="btn btn-default btn-success btn-lg" id="description">
+	       	</form>
+		</div>
+	</div>
+</section>

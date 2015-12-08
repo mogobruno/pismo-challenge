@@ -31,6 +31,16 @@ angular
         controller: 'ProductdetailCtrl',
         controllerAs: 'productdetail'
       })
+      .when('/sales', {
+        templateUrl: 'views/sales.html',
+        controller: 'SalesCtrl',
+        controllerAs: 'sales'
+      })
+      .when('/sales/create', {
+        templateUrl: 'views/salescreate.html',
+        controller: 'SalescreateCtrl',
+        controllerAs: 'salescreate'
+      })
       .otherwise({
         redirectTo: '/products'
       });

@@ -1,0 +1,10 @@
+<section class="container-fluid">
+	<div class="row">
+		<div class="title">
+			<h1>Vendas <a class="btn btn-default btn-green" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></a></h1>
+		</div>
+		<div class="list-group">
+		  <a href="" class="list-group-item" ng-repeat="sale in sales" >{{sale._id}} / {{sale.total | currency:"R$"}}</a>
+		</div>
+	</div>
+</section>

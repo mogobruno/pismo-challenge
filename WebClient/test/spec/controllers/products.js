@@ -9,15 +9,23 @@ describe('Controller: ProductsCtrl', function () {
     scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, Products) {
     scope = $rootScope.$new();
     ProductsCtrl = $controller('ProductsCtrl', {
-      $scope: scope
-      // place here mocked dependencies
+      $scope: scope,
+      Products: Products
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(ProductsCtrl.$scope.products.length).toBe(3);
+  it('Product detail url', function () {
+    ProductsCtrl.$scope.open({
+      _id:"5666f0f96e50ec441800000d"   
+    })
+    expect(window.location.hash).toBe("#/products/5666f0f96e50ec441800000d");
+  });
+
+  it('Product create url', function () {
+    ProductsCtrl.$scope.create()
+    expect(window.location.hash).toBe("#/products/create");
   });
 });

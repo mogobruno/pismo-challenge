@@ -10,7 +10,7 @@
 				<a class="btn btn-default btn-green btn-align" ng-click="open(product)"><span class="glyphicon glyphicon-eye-open"></span></a>
 				<div class="box-content">
 					<h2>{{product.name}}</h2>
-					<p>{{product.value}} / {{product.type}}</p>
+					<p>{{product.value | currency:"R$"}} / {{product.type}}</p>
 				</div>
 			</div>
 		</div>
