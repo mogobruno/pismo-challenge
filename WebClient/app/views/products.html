@@ -1,13 +1,13 @@
 <section class="container-fluid">
 	<div class="row">
 		<div class="title">
-			<h1>Produtos <a class="btn btn-default btn-green" ng-click="create()"><span class="glyphicon glyphicon-plus"></span></a></h1>
+			<h1>Produtos <a class="btn btn-default btn-green" ng-click="productsVm.create()"><span class="glyphicon glyphicon-plus"></span></a></h1>
 		</div>
-		<input placeholder="Digite o o nome, valor ou tipo de um produto" type="text" ng-model="productSearch" class="form-control">
-		<div id="box{{product._id}}" ng-repeat="product in products | filter: productSearch" class="col-md-3">
+		<input placeholder="Digite o o nome, valor ou tipo de um produto" type="text" ng-model="productsVm.productSearch" class="form-control">
+		<div id="box{{product._id}}" ng-repeat="product in productsVm.products | filter: productsVm.productSearch" class="col-md-3">
 			<div class="box">
-				<a class="btn btn-default btn-red btn-align" ng-click="remove(product)"><span class="glyphicon glyphicon-remove"></span></a>
-				<a class="btn btn-default btn-green btn-align" ng-click="open(product)"><span class="glyphicon glyphicon-eye-open"></span></a>
+				<a class="btn btn-default btn-red btn-align" ng-click="productsVm.remove(product)"><span class="glyphicon glyphicon-remove"></span></a>
+				<a class="btn btn-default btn-green btn-align" ng-click="productsVm.open(product)"><span class="glyphicon glyphicon-eye-open"></span></a>
 				<div class="box-content">
 					<h2>{{product.name}}</h2>
 					<p>{{product.value | currency:"R$"}} / {{product.type}}</p>

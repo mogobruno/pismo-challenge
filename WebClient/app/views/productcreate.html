@@ -4,20 +4,20 @@
 			<h1>Cadastro de Produto</h1>
 		</div>
 		<div>
-			<form ng-submit="save(product)">
+			<form ng-submit="productcreateVm.save(productcreateVm.product)">
 				<div class="form-group">
 		            <label for="name" class="control-label">Nome:</label>
-		            <input type="text" ng-model="product.name" class="form-control" id="name" required placeholder="Digite o nome do produto" maxlength="50">
+		            <input type="text" ng-model="productcreateVm.product.name" class="form-control" id="name" required placeholder="Digite o nome do produto" maxlength="50">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="value" class="control-label">Valor:</label>
-		            <input type="number" ng-model="product.value" step="any" class="form-control" id="value" required placeholder="Digite o valor do produto" min="0">
+		            <input type="number" ng-model="productcreateVm.product.value" step="any" class="form-control" id="value" required placeholder="Digite o valor do produto" min="0">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="type" class="control-label">Unidade:</label>
-		            <select id="type" ng-model="product.type" class="form-control" required>
+		            <select id="type" ng-model="productcreateVm.product.type" class="form-control" required>
 		            	<option value="Unidade">Unidade</option>
 		            	<option value="Caixa">Caixa</option>
 		            	<option value="Peca">Peça</option>
@@ -26,12 +26,12 @@
 
 		        <div class="form-group">
 		            <label for="amount" class="control-label">Quantidade:</label>
-		            <input type="number" ng-model="product.amount" class="form-control" id="amount" required placeholder="Digite a quatidade do produto" min="0">
+		            <input type="number" ng-model="productcreateVm.product.amount" class="form-control" id="amount" required placeholder="Digite a quatidade do produto" min="0">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="description" class="control-label">Descrição:</label>
-		            <input type="text" ng-model="product.description" class="form-control" id="description" required placeholder="Digite a descrição do produto" maxlength="250">
+		            <input type="text" ng-model="productcreateVm.product.description" class="form-control" id="description" required placeholder="Digite a descrição do produto" maxlength="250">
 		        </div>
 
 		        <div class="form-group">

@@ -19,27 +19,27 @@ angular
       .when('/products', {
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl',
-        controllerAs: 'products'
+        controllerAs: 'productsVm'
       })
       .when('/products/create', {
         templateUrl: 'views/productcreate.html',
         controller: 'ProductcreateCtrl',
-        controllerAs: 'productcreate'
+        controllerAs: 'productcreateVm'
       })
       .when('/products/:id', {
         templateUrl: 'views/productdetail.html',
         controller: 'ProductdetailCtrl',
-        controllerAs: 'productdetail'
+        controllerAs: 'productdetailVm'
       })
       .when('/sales', {
         templateUrl: 'views/sales.html',
         controller: 'SalesCtrl',
-        controllerAs: 'sales'
+        controllerAs: 'salesVm'
       })
       .when('/sales/create', {
         templateUrl: 'views/salescreate.html',
         controller: 'SalescreateCtrl',
-        controllerAs: 'salescreate'
+        controllerAs: 'salescreateVm'
       })
       .otherwise({
         redirectTo: '/products'

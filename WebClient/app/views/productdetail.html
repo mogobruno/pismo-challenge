@@ -1,42 +1,42 @@
 <section class="container-fluid">
 	<div class="row">
 		<div class="title">
-			<h1>{{product.name}} <a class="btn btn-default btn-green" ng-click="productEdit = true"><span class="glyphicon glyphicon-pencil"></span></a></h1>
+			<h1>{{productdetailVm.product.name}} <a class="btn btn-default btn-green" ng-click="productdetailVm.productEdit = true"><span class="glyphicon glyphicon-pencil"></span></a></h1>
 		</div>
-		<div ng-hide="productEdit" class="details">
-			<p><strong>Valor/Unidade:</strong> {{product.value | currency:"R$"}} / {{product.type}}</p>
-			<p><strong>Quantidade:</strong> {{product.amount}}</p>		
-			<p><strong>Descrição:</strong> {{product.description}}</p>
+		<div ng-hide="productdetailVm.productEdit" class="details">
+			<p><strong>Valor/Unidade:</strong> {{productdetailVm.product.value | currency:"R$"}} / {{productdetailVm.product.type}}</p>
+			<p><strong>Quantidade:</strong> {{productdetailVm.product.amount}}</p>		
+			<p><strong>Descrição:</strong> {{productdetailVm.product.description}}</p>
 		</div>
-		<div ng-show="productEdit" class="edit">
-			<form ng-submit="save(product)">
+		<div ng-show="productdetailVm.productEdit" class="edit">
+			<form ng-submit="productdetailVm.save(productdetailVm.product)">
 				<div class="form-group">
 		            <label for="name" class="control-label">Nome:</label>
-		            <input type="text" ng-model="product.name" class="form-control" id="name" required placeholder="Digite o nome do produto">
+		            <input type="text" ng-model="productdetailVm.product.name" class="form-control" id="name" required placeholder="Digite o nome do produto">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="value" class="control-label">Valor:</label>
-		            <input type="number" ng-model="product.value" step="any" class="form-control" id="value" required placeholder="Digite o valor do produto">
+		            <input type="number" ng-model="productdetailVm.product.value" step="any" class="form-control" id="value" required placeholder="Digite o valor do produto">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="type" class="control-label">Unidade:</label>
-		            <select id="type" ng-model="product.type" class="form-control">
-		            	<option value="Unidade" ng-selected="product.type == 'Unidade'">Unidade</option>
-		            	<option value="Caixa" ng-selected="product.type == 'Caixa'">Caixa</option>
-		            	<option value="Peca" ng-selected="product.type == 'Peca'">Peça</option>
+		            <select id="type" ng-model="productdetailVm.product.type" class="form-control">
+		            	<option value="Unidade" ng-selected="productdetailVm.product.type == 'Unidade'">Unidade</option>
+		            	<option value="Caixa" ng-selected="productdetailVm.product.type == 'Caixa'">Caixa</option>
+		            	<option value="Peca" ng-selected="productdetailVm.product.type == 'Peca'">Peça</option>
 		            </select>
 		        </div>
 
 		        <div class="form-group">
 		            <label for="amount" class="control-label">Quantidade:</label>
-		            <input type="number" ng-model="product.amount" class="form-control" id="amount" required placeholder="Digite a quatidade do produto">
+		            <input type="number" ng-model="productdetailVm.product.amount" class="form-control" id="amount" required placeholder="Digite a quatidade do produto">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="description" class="control-label">Descrição:</label>
-		            <input type="text" ng-model="product.description" class="form-control" id="description" required placeholder="Digite a descrição do produto">
+		            <input type="text" ng-model="productdetailVm.product.description" class="form-control" id="description" required placeholder="Digite a descrição do produto">
 		        </div>
 
 		        <div class="form-group">

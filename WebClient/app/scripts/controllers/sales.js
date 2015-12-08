@@ -10,13 +10,14 @@
  * Controller of the webClientApp
  */
 angular.module('webClientApp')
-  .controller('SalesCtrl', function ($scope, $location, Sales) {
+  .controller('SalesCtrl', function ($location, Sales) {
+    var vm = this;
   	Sales.query(function(sales){
   		console.log(sales);
-  		$scope.sales = sales;
+  		vm.sales = sales;
   	});
   	
-  	$scope.create = function(){
+  	vm.create = function(){
   		$location.path('/sales/create');
   	}
   });

@@ -10,13 +10,15 @@
  * Controller of the webClientApp
  */
 angular.module('webClientApp')
-  .controller('ProductsCtrl', function ($scope, $location, Products) {
+  .controller('ProductsCtrl', function ($location, Products) {
+
+  		var vm = this;
 
 	  	Products.query(function(products){
-	  		$scope.products = products;
+	  		vm.products = products;
 	  	});
 
-	  	$scope.remove = function(product){
+	  	vm.remove = function(product){
 	  		var productId = product._id;
 	  		product.$remove(
 	  		function success(){
@@ -38,12 +40,12 @@ angular.module('webClientApp')
 	  		});
 	  	}
 
-	  	$scope.open = function(product){
+	  	vm.open = function(product){
 	  		var productId = product._id;
 	  		$location.path('/products/'.concat(productId));
 	  	}
 
-	  	$scope.create = function(){
+	  	vm.create = function(){
 	  		$location.path('/products/create');
 	  	}
 

@@ -4,21 +4,21 @@
 			<h1>Efetuar uma Venda</h1>
 		</div>
 		<div>
-			<form ng-submit="save(sales)">
+			<form ng-submit="salescreateVm.save(salescreateVm.sales)">
 				<div class="list-group">
-					<a href="" class="list-group-item" ng-repeat="product in products" >
+					<a href="" class="list-group-item" ng-repeat="product in salescreateVm.products" >
 						{{product.name}}, {{product.value | currency:"R$"}} / {{product.type}} 
 						<input type="number" 
 						max="{{product.amount}}" 
 						min="1"
 						placeholder="Quantidade no máximo {{product.amount}}" 
 						ng-model="product.salesAmount" 
-						ng-change="calculateTotal()" 
+						ng-change="salescreateVm.calculateTotal()" 
 						class="form-control">
 					</a>
 				</div>
 	  
-		        <p>Total: {{sales.total | currency:"R$"}}</p>
+		        <p>Total: {{salescreateVm.sales.total | currency:"R$"}}</p>
 		        <input type="submit" class="btn btn-default btn-success btn-lg" id="description">
 	       	</form>
 		</div>

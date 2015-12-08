@@ -10,19 +10,21 @@
  * Controller of the webClientApp
  */
 angular.module('webClientApp')
-  .controller('ProductdetailCtrl', function ($scope, $routeParams, Products) {
+  .controller('ProductdetailCtrl', function ( $routeParams, Products) {
+
+    var vm = this;
 
   	Products.get({ id: $routeParams.id }, function(product){
-  		$scope.product = product;
+  		vm.product = product;
   	})
 
-  	$scope.save = function(product){
+  	vm.save = function(product){
   		product.$update({ id: $routeParams.id }, 
   		function (success){
-  			$scope.productEdit = false;
+  			vm.productEdit = false;
   		},
   		function (error){
-  			$scope.productEdit = false;
+  			vm.productEdit = false;
   		})
   	}
 
