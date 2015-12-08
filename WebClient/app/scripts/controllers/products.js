@@ -19,10 +19,20 @@ angular.module('webClientApp')
 	  		product.$remove(
 	  		function success(){
 	  			$("#box".concat(productId)).remove();
-	  			alert("Item removido");
+	  			swal({
+					title: "Produto removido!",
+					text: "O produto foi removido com sucesso.",
+					type: "success",
+					confirmButtonText: "Ok" 
+				});
 	  		},
 	  		function error(){
-	  			alert("Erro de comunicação com o servidor");
+	  			swal({
+					title: "Erro!",
+					text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
+					type: "error",
+					confirmButtonText: "Ok" 
+				});
 	  		});
 	  	}
 

@@ -1,10 +1,9 @@
 <section class="container-fluid">
 	<div class="row">
 		<div class="title">
-			<h1>Produto <a class="btn btn-default btn-green" ng-click="productEdit = true"><span class="glyphicon glyphicon-pencil"></span></a></h1>
+			<h1>{{product.name}} <a class="btn btn-default btn-green" ng-click="productEdit = true"><span class="glyphicon glyphicon-pencil"></span></a></h1>
 		</div>
 		<div ng-hide="productEdit" class="details">
-			<h2>{{product.name}}</h2>
 			<p><strong>Valor/Unidade:</strong> {{product.value | currency:"R$"}} / {{product.type}}</p>
 			<p><strong>Quantidade:</strong> {{product.amount}}</p>		
 			<p><strong>Descrição:</strong> {{product.description}}</p>

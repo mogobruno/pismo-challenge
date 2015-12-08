@@ -12,11 +12,16 @@ angular.module('webClientApp')
   		$scope.product = new Products();
 		$scope.save = function(product){
 			product.$save(
-			function success(success){
-				$location.path('/products');
+			function success(success){ 
+				$location.path('/products'); 
 			},
 			function error(error){
-				alert('Erro ao tentar cadastrar produto');
+				swal({
+					title: "Erro!",
+					text: "Ocorreu um problema de comunicação com os nossos serviços, tente novamente mais tarde.",
+					type: "error",
+					confirmButtonText: "Ok" 
+				});
 			})
 		}
   });
