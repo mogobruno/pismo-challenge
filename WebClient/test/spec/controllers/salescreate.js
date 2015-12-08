@@ -22,7 +22,7 @@ describe('Controller: SalescreateCtrl', function () {
       total: 0,
       products: []
     }
-    expect(scope.isValid(sales)).toBe(false);
+    expect(SalescreateCtrl.isValid(sales)).toBe(false);
   });
 
   it('Verificar se uma venda com produto e valida', function () {
@@ -32,6 +32,6 @@ describe('Controller: SalescreateCtrl', function () {
         {amount: 12, salesAmount: 1}
       ]
     }
-    expect(scope.isValid(sales)).toBe(true);
+    expect(SalescreateCtrl.isValid(sales)).toBe(true);
   });
 });

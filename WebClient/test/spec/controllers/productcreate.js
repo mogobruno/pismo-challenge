@@ -25,7 +25,7 @@ describe('Controller: ProductcreateCtrl', function () {
       amount: 123,
       type: "Unidade"
     }
-    expect(scope.isValid(product)).toBe(false);
+    expect(ProductcreateCtrl.isValid(product)).toBe(false);
   });
 
   it('Verificar um produto com todos os campos dentro dos valores validos', function () {
@@ -36,7 +36,7 @@ describe('Controller: ProductcreateCtrl', function () {
       amount: 123,
       type: "Unidade"
     }
-    expect(scope.isValid(product)).toBe(true);
+    expect(ProductcreateCtrl.isValid(product)).toBe(true);
   });
 
   it('Verificar se um produto com descrição maior que 250 caracteres e invalido', function () {
@@ -47,7 +47,7 @@ describe('Controller: ProductcreateCtrl', function () {
       amount: 123,
       type: "Unidade"
     }
-    expect(scope.isValid(product)).toBe(false);
+    expect(ProductcreateCtrl.isValid(product)).toBe(false);
   });
 
   it('Verificar se um produto com tipo diferente de "Unidade", "Caixa" ou "Peca" e invalido', function () {
@@ -58,7 +58,7 @@ describe('Controller: ProductcreateCtrl', function () {
       amount: 123,
       type: "Metros"
     }
-    expect(scope.isValid(product)).toBe(false);
+    expect(ProductcreateCtrl.isValid(product)).toBe(false);
   });
 });
 
