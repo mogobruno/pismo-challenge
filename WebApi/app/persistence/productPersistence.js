@@ -9,11 +9,6 @@ var responseSender = function(err, response, res){
 }
 
 var isValid = function(product){
-	console.log(product.name.length <= 50);
-	console.log(product.description.length <= 250);
-	console.log(product.type === "Peca");
-	console.log(product.type === "Caixa");
-	console.log(product.type === "Unidade");
 	if(product.name.length <= 50 &&
 		   product.description.length <= 250 &&
 		   (product.type === "Peca"  ||

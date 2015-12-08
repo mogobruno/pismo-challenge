@@ -18,12 +18,12 @@
 
 		        <div class="form-group">
 		            <label for="value" class="control-label">Valor:</label>
-		            <input type="number" ng-model="product.value" class="form-control" id="value" required placeholder="Digite o valor do produto">
+		            <input type="number" ng-model="product.value" step="any" class="form-control" id="value" required placeholder="Digite o valor do produto">
 		        </div>
 
 		        <div class="form-group">
 		            <label for="type" class="control-label">Unidade:</label>
-		            <select id="type" class="form-control">
+		            <select id="type" ng-model="product.type" class="form-control">
 		            	<option value="Unidade" ng-selected="product.type == 'Unidade'">Unidade</option>
 		            	<option value="Caixa" ng-selected="product.type == 'Caixa'">Caixa</option>
 		            	<option value="Peca" ng-selected="product.type == 'Peca'">Peça</option>
